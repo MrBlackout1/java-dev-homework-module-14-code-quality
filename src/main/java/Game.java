@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -24,10 +25,10 @@ public class Game {
 
             checkInputX();
 
-            if(checkWinner('X')){
+            if (checkWinner('X')) {
                 winner = 1;
             }
-            if (checkDraw()){
+            if (checkDraw()) {
                 winner = 3;
             }
             if (checkWinner()) {
@@ -36,10 +37,10 @@ public class Game {
 
             checkInput0();
 
-            if(checkWinner('O')){
+            if (checkWinner('O')) {
                 winner = 2;
             }
-            if (checkDraw()){
+            if (checkDraw()) {
                 winner = 3;
             }
             if (checkWinner()) {
@@ -48,7 +49,7 @@ public class Game {
         }
     }
 
-    private void clearBox(){
+    private void clearBox() {
         for (i = 0; i < 9; i++)
             box[i] = ' ';
     }
@@ -103,7 +104,7 @@ public class Game {
     }
 
     private boolean checkWinner(char playerSymbol) {
-        return     (box[0] == playerSymbol && box[1] == playerSymbol && box[2] == playerSymbol)
+        return (box[0] == playerSymbol && box[1] == playerSymbol && box[2] == playerSymbol)
                 || (box[3] == playerSymbol && box[4] == playerSymbol && box[5] == playerSymbol)
                 || (box[6] == playerSymbol && box[7] == playerSymbol && box[8] == playerSymbol)
                 || (box[0] == playerSymbol && box[3] == playerSymbol && box[6] == playerSymbol)
@@ -124,4 +125,4 @@ public class Game {
 
         return !boxAvailable;
     }
-    }
+}
